@@ -40,7 +40,7 @@ export default {
         firebase.auth().signInWithEmailAndPassword(this.email, this.senha).then(
           (user) => {
             this.$router.replace('home')
-            alert(`Bem Vindo, ${{email}}`)
+            alert(`Bem Vindo, ${user.user.email}`)
           },
           (err) => {
             alert('Não foi possível realizar o login. ' + err.message)
